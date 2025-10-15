@@ -1,0 +1,11 @@
+Obiettivo: mostrare chi sono: cosa mi piace, cosa faccio
+Pubblico: datore di lavoro, qualcuno curioso di vedere i miei progetti, conoscenti
+Come arriva alla mia pagina: cercando il mio nome sul motore di ricerca
+
+Sezioni: Projects, Blog, About Me, things that inspire Me
+
+Tante immagini o poche ma grandi, colorate, font semplice, stile "UltimoUomo"
+
+Homepage: 4 quadranti per 4 sezioni, con un immagine per quadrante
+
+Linkedin, Github, gmail e X come social sotto la pagina

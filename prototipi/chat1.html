@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nome Cognome — Portfolio</title>
+  <meta name="description" content="Portfolio di Nome Cognome — progetti, idee e ispirazioni." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --fg: #f1f1f1;
+      --muted: #888;
+      --accent1: #00b4d8;
+      --accent2: #ff0054;
+      --accent3: #ffd60a;
+      --gap: 18px;
+      --max-width: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Inter", system-ui, sans-serif;
+      line-height: 1.5;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
+      padding-bottom: 16px;
+    }
+
+    h1 {
+      font-weight: 900;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .lead { color: var(--muted); font-size: 0.9rem; }
+
+    /* quadranti */
+    .quad-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--gap);
+      margin-top: 28px;
+    }
+
+    @media (max-width: 900px) { .quad-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 600px) { .quad-grid { grid-template-columns: 1fr; } }
+
+    .quad {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+      background: #111;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-end;
+      border: none;
+      transition: transform .3s ease;
+    }
+    .quad:hover { transform: translateY(-4px); }
+
+    .quad .img {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.8;
+      transition: opacity .4s ease;
+    }
+    .quad:hover .img { opacity: 1; }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.8) 100%);
+    }
+
+    .quad-head {
+      position: relative;
+      padding: 16px;
+      z-index: 2;
+    }
+    .label {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .sub {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    /* contenuti */
+    section {
+      margin-top: 40px;
+      border-top: 1px solid #222;
+      padding-top: 24px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    p, li { color: var(--fg); }
+    .muted { color: var(--muted); }
+
+    footer {
+      margin-top: 40px;
+      padding: 16px 0;
+      border-top: 1px solid #222;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .socials a {
+      margin-right: 12px;
+      color: var(--fg);
+      transition: color .2s;
+    }
+    .socials a:hover { color: var(--accent1); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Nome Cognome</h1>
+        <div class="lead">21 anni — developer, designer, curioso</div>
+      </div>
+    </header>
+
+    <nav class="quad-grid">
+      <a class="quad" href="#projects">
+        <div class="img" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80');"></div>
+        <div class="overlay"></div>
+        <div class="quad-head">
+          <div class="label">Projects</div>
+          <div class="sub">Cose che ho costruito e rotto</div>
+        </div>
+      </a>
+      <a class="quad" href="#blog">
+        <div class="img" style="background-image:url('https://images.unsplash.com/photo-1535930749574-1399327ce78f?auto=format&fit=crop&w=800&q=80');"></div>
+        <div class="overlay"></div>
+        <div class="quad-head">
+          <div class="label">Blog</div>
+          <div class="sub">Appunti, idee e codice</div>
+        </div>
+      </a>
+      <a class="quad" href="#about">
+        <div class="img" style="background-image:url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80');"></div>
+        <div class="overlay"></div>
+        <div class="quad-head">
+          <div class="label">About</div>
+          <div class="sub">Chi sono in 5 righe</div>
+        </div>
+      </a>
+      <a class="quad" href="#inspire">
+        <div class="img" style="background-image:url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80');"></div>
+        <div class="overlay"></div>
+        <div class="quad-head">
+          <div class="label">Inspire</div>
+          <div class="sub">Cose che mi fanno gasare</div>
+        </div>
+      </a>
+    </nav>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <p>Progetti personali, hackathon e idee nate alle 2 di notte. Ogni progetto ha insegnato qualcosa — design, codice, o semplicemente quanto sia facile rompere tutto.</p>
+      <ul>
+        <li><strong>MyApp:</strong> app minimal per organizzare la giornata.</li>
+        <li><strong>Portfolio v1:</strong> il mio primo sito, tutto scritto a mano.</li>
+        <li><strong>Game Jam 2025:</strong> piccolo platform fatto in 48h.</li>
+      </ul>
+    </section>
+
+    <section id="blog">
+      <h2>Blog</h2>
+      <p>Scrivo per capire meglio le cose: dal design system alle notti passate a debuggare.</p>
+      <ul>
+        <li>“Cose che avrei voluto sapere a 18 anni su JavaScript”</li>
+        <li>“Minimalismo nel design: non è vuoto, è essenziale”</li>
+        <li>“Perché ho deciso di fare un portfolio dark mode”</li>
+      </ul>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>Mi chiamo <strong>Nome Cognome</strong>, ho 21 anni e vivo di musica, design e codice.  
+      Studio informatica, ma passo più tempo su Figma che sui libri.  
+      Mi piace costruire cose che hanno uno stile, anche se nessuno le vede.</p>
+    </section>
+
+    <section id="inspire">
+      <h2>Things that inspire me</h2>
+      <p>Playlist lo-fi, neon di notte, interfacce pulite, videogiochi indie, la cultura di internet.  
+      Tutto quello che mi spinge a creare qualcosa di mio.</p>
+    </section>
+
+    <footer>
+      <div>© 2025 Nome Cognome</div>
+      <div class="socials">
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+        <a href="#">Email</a>
+        <a href="#">X</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
